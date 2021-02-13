@@ -5,6 +5,8 @@
  */
 package Poyecto1;
 
+import java.util.concurrent.Semaphore;
+
 /**
  *
  * @author leonp
@@ -15,7 +17,10 @@ public class Main {
     
     public static void main(String[] args){ 
        
+        Semaphore mutex = new Semaphore(1);
         
+        Productor_botones boton = new Productor_botones(mutex);
+        boton.start();
     }
 }
 

@@ -14,6 +14,12 @@ public class Ensamblador extends Thread {
     Semaphore mutex;
     private int consolas_listas = 0;
     private int ensambladores = 1;
+
+    public Ensamblador(Semaphore mutex) {
+    this.mutex = mutex;
+    }
+    
+    
     
     public void run_ensambladores(){
         
@@ -27,4 +33,25 @@ public class Ensamblador extends Thread {
             System.out.println(e);
         }
     }
+    
+    // Getters & Setters
+
+    public int getConsolas_listas() {
+        return consolas_listas;
+    }
+
+    public void setConsolas_listas(int consolas_listas) {
+        this.consolas_listas = consolas_listas;
+    }
+
+    public int getEnsambladores() {
+        return ensambladores;
+    }
+
+    public void setEnsambladores(int ensambladores) {
+        this.ensambladores = ensambladores;
+    }
+    
+    
+    
 }
